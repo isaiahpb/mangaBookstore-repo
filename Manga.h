@@ -1,13 +1,14 @@
 #ifndef MANGA_H
-#define MANGA_h
+#define MANGA_H
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class Manga {
     public:
-        Manga(string userTitle = "None", string userAuthor = "None", string userPublisher = "None", int quantity = 0, int price = 0.0);
+        Manga(string userTitle = "None", string userAuthor = "None", string userPublisher = "None", int userQuantity = 0, int userPrice = 0.0);
         //Accessor Functions
         const string getTitle() const { return title; }
         const string getAuthor() const { return author; }
@@ -26,7 +27,7 @@ class Manga {
     private:
         string title, author, publisher;
         int quantity;
-        double price;
+        double price; 
 };
 
 
