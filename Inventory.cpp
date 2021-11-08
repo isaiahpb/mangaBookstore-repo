@@ -87,6 +87,21 @@ void Inventory::deleteManga() {
     }
 }
 
+void Inventory::sortManga() {
+    char choice = 'a';
+    cout << endl;
+    cout << "How would you like to sort the manga? (q to quit)" << endl;
+    cout << "Title(t), quantity(q), author's first name(f), price(p) ";
+    cin >> choice;
+
+    if(choice == 't') {
+        for(unsigned i = 0; i < inventory.size(); ++i) {
+            
+        }   
+    }
+    
+}
+
 int Inventory::check(string name, int volume) {
     for(unsigned i = 0; i < inventory.size(); ++i) {
         if(inventory.at(i).getTitle() == name && inventory.at(i).getVolume() == volume) {
@@ -98,13 +113,18 @@ int Inventory::check(string name, int volume) {
 
 void Inventory::printList() const {
     cout << endl;
-    for(unsigned i = 0; i < inventory.size(); ++i) {
-        cout << "Title: " << inventory.at(i).getTitle() << endl;
-        cout << "Volume: " << inventory.at(i).getVolume() << endl;
-        cout << "Author: " << inventory.at(i).getAuthor() << endl;
-        cout << "Publisher: " << inventory.at(i).getPublisher() << endl;
-        cout << "Quantity: " << inventory.at(i).getQuantity() << endl;
-        cout << "Price: $" << inventory.at(i).getPrice() << endl;
-        cout << endl;
+    if (inventory.size() > 0) {
+        for(unsigned i = 0; i < inventory.size(); ++i) {
+            cout << "Title: " << inventory.at(i).getTitle() << endl;
+            cout << "Volume: " << inventory.at(i).getVolume() << endl;
+            cout << "Author: " << inventory.at(i).getAuthor() << endl;
+            cout << "Publisher: " << inventory.at(i).getPublisher() << endl;
+            cout << "Quantity: " << inventory.at(i).getQuantity() << endl;
+            cout << "Price: $" << inventory.at(i).getPrice() << endl;
+            cout << endl;
+        }
+    }
+    else {
+        cout << "There is no manga in the inventory." << endl;
     }
 }

@@ -10,6 +10,7 @@ class Inventory {
         void printList() const;
         void modifyManga();
         void deleteManga();
+        void sortManga();
         void printTotalPrice();
 
     private:
