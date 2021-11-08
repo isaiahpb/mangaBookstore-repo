@@ -41,18 +41,37 @@ void choice(char count, Inventory& inventory) {
     char con;
     if(count == 'a') {
         inventory.addManga();
-    }
-    else if(count == 'b') {
-        inventory.modifyManga();
-    } 
-    else if(count == 'c') {
-        inventory.deleteManga();
-    }
-    else if(count == 'd') {
-        inventory.printList();
+        cout << endl;
         cout << "Press any key, followed by return, to continue ... ";
         cin >> con;
         cout << endl;
-
+    }
+    else if(count == 'b') {
+        inventory.modifyManga();
+        cout << endl;
+        cout << "Press any key, followed by return, to continue ... ";
+        cin >> con;
+        cout << endl;
+    } 
+    else if(count == 'c') {
+        inventory.deleteManga();
+        cout << endl;
+        cout << "Press any key, followed by return, to continue ... ";
+        cin >> con;
+        cout << endl;
+    }
+    else if(count == 'd') {
+        inventory.printList();
+        cout << endl;
+        cout << "Press any key, followed by return, to continue ... ";
+        cin >> con;
+        cout << endl;
+    }
+    else if(count == 'e') {
+        inventory.sortManga();
+        cout << endl;
+        cout << "Press any key, followed by return, to continue ... ";
+        cin >> con;
+        cout << endl;
     }
 }

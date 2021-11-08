@@ -15,6 +15,7 @@ class Manga {
         const int getQuantity() const { return quantity; }
         const double getPrice() const { return price; }
         const int getVolume() const { return volume; }
+        const char getFirstLetter() const { return title[0]; }
 
         //Mutator Functions
         void setTitle(string title) { this->title = title; }

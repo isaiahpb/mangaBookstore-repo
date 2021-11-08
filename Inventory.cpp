@@ -50,9 +50,6 @@ void Inventory::modifyManga() {
     }
     else {
         cout << "The name and volume you entered does not correspond with the content of the inventory" << endl;
-        cout << "Press any key, followed by return, to continue ... ";
-        cin >> choice;
-        cout << endl;
     }
 
     
@@ -75,31 +72,42 @@ void Inventory::deleteManga() {
     if(index > -1) {
         inventory.erase(inventory.begin() + index);
         cout << "The manga and its volume has been deleted from the inventory." << endl;
-        cout << "Press any key, followed by return, to continue ... ";
-        cin >> choice;
-        cout << endl;
     }
     else {
         cout << "The name and volume you entered does not correspond with the content of the inventory" << endl;
-        cout << "Press any key, followed by return, to continue ... ";
-        cin >> choice;
-        cout << endl;
     }
 }
 
 void Inventory::sortManga() {
     char choice = 'a';
+    unsigned i;
     cout << endl;
     cout << "How would you like to sort the manga? (q to quit)" << endl;
     cout << "Title(t), quantity(q), author's first name(f), price(p) ";
     cin >> choice;
 
     if(choice == 't') {
-        for(unsigned i = 0; i < inventory.size(); ++i) {
-            
-        }   
+        for(i = 0; i < inventory.size()-1; ++i) {
+            if(int(inventory.at(i).getFirstLetter()) > int(inventory.at(i+1).getFirstLetter())) {
+                Manga temp = inventory.at(i);
+                inventory.at(i) = inventory.at(i+1);
+                inventory.at(i+1) = temp;
+            } 
+            i = 0;
+        } 
+        cout << "List has been sorted alphabetically." << endl;  
     }
-    
+    else if(choice == 'q') {
+        for(i = 0; i < inventory.size()-1; ++i) {
+            if(inventory.at(i).getQuantity() < inventory.at(i+1).getQuantity()) {
+                Manga temp = inventory.at(i);
+                inventory.at(i) = inventory.at(i+1);
+                inventory.at(i+1) = temp;
+            } 
+            i = 0;
+        }
+        cout << "List has been sorted from greatest quantity to least quantity" << endl;  
+    }
 }
 
 int Inventory::check(string name, int volume) {
