@@ -43,11 +43,11 @@ void choice(char count, Inventory& inventory) {
         inventory.addManga();
     }
     else if(count == 'b') {
-        
+        inventory.modifyManga();
     } 
     else if(count == 'd') {
         inventory.printList();
-        cout << "Press any key to continue ... ";
+        cout << "Press any key, followed by return, to continue ... ";
         cin >> con;
         cout << endl;
 

@@ -10,9 +10,9 @@ class Inventory {
         void printList() const;
         void modifyManga();
         void printTotalPrice();
-        bool checkName();
 
     private:
+        int check(string name, int volume);
         vector<Manga> inventory;
 };
 

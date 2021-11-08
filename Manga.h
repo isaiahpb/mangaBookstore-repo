@@ -17,12 +17,13 @@ class Manga {
         const int getVolume() const { return volume; }
 
         //Mutator Functions
-        void setTitle(int title) { this->title = title; }
-        void setAuthor(int author) { this->author = author; }
-        void setPublisher(int publisher) { this->publisher = publisher; }
+        void setTitle(string title) { this->title = title; }
+        void setAuthor(string author) { this->author = author; }
+        void setPublisher(string publisher) { this->publisher = publisher; }
         void setPrice(double price) { this->price = price; }
         void setQuantity(int quantity) { this->quantity = quantity; } 
         void setVolume(int volume) { this->volume = volume; }
+        void modify(char choice);
 
 
     private:

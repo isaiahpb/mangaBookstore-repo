@@ -28,17 +28,43 @@ void Inventory::addManga() {
 void Inventory::modifyManga() {
     char choice = 'a';
     string name;
+    int volume;
+    int index;
 
-    cout << "Which manga would you like to modify? " << endl;
+    cout << "Name of manga to modify: ";
     cin.ignore();
     getline(cin, name);
+    cout << "Volume of manga: ";
+    cin >> volume;
+    index = check(name, volume);
+    if (index > -1) {
+        while(choice != 'q') {
+            cout << endl;
+            cout << "What would like to modify? (q to quit)" << endl;
+            cout << "Title (t), Author (a), Publisher(p), Volume(v), Price(d), Quantity(n): ";
+            cin.clear();
+            cin >> choice;
+            inventory.at(index).modify(choice);
+        }
+    }
+    else {
+        cout << "The name and volume you entered does not correspond with the content of the inventory" << endl;
+        cout << "Press any key, followed by return, to continue ... ";
+        cin >> choice;
+        cout << endl;
+    }
+
+    
 
 }
 
-bool Inventory::checkName() {
+int Inventory::check(string name, int volume) {
     for(unsigned i = 0; i < inventory.size(); ++i) {
-        
+        if(inventory.at(i).getTitle() == name && inventory.at(i).getVolume() == volume) {
+            return i;
+        }
     }
+    return -1;
 }
 
 void Inventory::printList() const {

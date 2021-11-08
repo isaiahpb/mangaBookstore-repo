@@ -9,3 +9,10 @@ Manga::Manga(string userTitle, string userAuthor, string userPublisher, int user
     volume = userVolume;
 }
 
+void Manga::modify(char choice) {
+    if(choice == 't') {
+        cout << "New title: ";
+        cin.ignore();
+        getline(cin, title);
+    }
+}
