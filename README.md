@@ -1,6 +1,7 @@
 #Manga Bookstore Program
 
-This program will allow users to store manga in an inventory like a bookstore
-Users will be asked the title, author, publisher, price, and quantity
-Additionally, they can buy a certain amount of manga, modify the data members, delete manga.
-This program will provide messages that inform the user of they inputted an invalid value
+Program Gist
+This program will allow users to store, delete, purchase, list, modify, and sort manga in an inventory. If they decide to store manga, they will be asked the title, author, publisher, volume, price, and quantity. The user will be informed when she/he inputs an invalid valid and will be asked once more.
+
+Troubles
+One of difficulties I experiencied is how the users will modify the manga. The program will ask for the title but there could be some manga that have the same title. To resolve this, the program will request for the volume number.

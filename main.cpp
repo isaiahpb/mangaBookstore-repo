@@ -14,7 +14,8 @@ int main() {
     cout << endl;
 
     prompt();
-
+    cout << endl;
+    cout << "Thank you for your patronage" << endl;
     return 0;
 }
 
@@ -41,6 +42,9 @@ void choice(char count, Inventory& inventory) {
     if(count == 'a') {
         inventory.addManga();
     }
+    else if(count == 'b') {
+        
+    } 
     else if(count == 'd') {
         inventory.printList();
         cout << "Press any key to continue ... ";

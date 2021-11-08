@@ -8,8 +8,9 @@ class Inventory {
     public:
         void addManga();
         void printList() const;
+        void modifyManga();
         void printTotalPrice();
-
+        bool checkName();
 
     private:
         vector<Manga> inventory;

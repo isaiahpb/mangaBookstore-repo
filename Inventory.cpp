@@ -25,6 +25,22 @@ void Inventory::addManga() {
     inventory.push_back(manga);
 }
 
+void Inventory::modifyManga() {
+    char choice = 'a';
+    string name;
+
+    cout << "Which manga would you like to modify? " << endl;
+    cin.ignore();
+    getline(cin, name);
+
+}
+
+bool Inventory::checkName() {
+    for(unsigned i = 0; i < inventory.size(); ++i) {
+        
+    }
+}
+
 void Inventory::printList() const {
     cout << endl;
     for(unsigned i = 0; i < inventory.size(); ++i) {
