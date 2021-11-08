@@ -59,6 +59,34 @@ void Inventory::modifyManga() {
 
 }
 
+void Inventory::deleteManga() {
+    char choice = 'a';
+    string name;
+    int volume;
+    int index;
+
+    cout << "Name of manga to modify: ";
+    cin.ignore();
+    getline(cin, name);
+    cout << "Volume of manga: ";
+    cin >> volume;
+    index = check(name, volume);
+
+    if(index > -1) {
+        inventory.erase(inventory.begin() + index);
+        cout << "The manga and its volume has been deleted from the inventory." << endl;
+        cout << "Press any key, followed by return, to continue ... ";
+        cin >> choice;
+        cout << endl;
+    }
+    else {
+        cout << "The name and volume you entered does not correspond with the content of the inventory" << endl;
+        cout << "Press any key, followed by return, to continue ... ";
+        cin >> choice;
+        cout << endl;
+    }
+}
+
 int Inventory::check(string name, int volume) {
     for(unsigned i = 0; i < inventory.size(); ++i) {
         if(inventory.at(i).getTitle() == name && inventory.at(i).getVolume() == volume) {

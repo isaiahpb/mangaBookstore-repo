@@ -45,6 +45,9 @@ void choice(char count, Inventory& inventory) {
     else if(count == 'b') {
         inventory.modifyManga();
     } 
+    else if(count == 'c') {
+        inventory.deleteManga();
+    }
     else if(count == 'd') {
         inventory.printList();
         cout << "Press any key, followed by return, to continue ... ";
