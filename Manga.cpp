@@ -15,4 +15,32 @@ void Manga::modify(char choice) {
         cin.ignore();
         getline(cin, title);
     }
+    else if(choice == 'a') {
+        cout << "New author: ";
+        cin.ignore();
+        getline(cin, author);
+    }
+    else if(choice == 'p') {
+        cout << "New publisher: ";
+        cin.ignore();
+        getline(cin, publisher);
+    }
+    else if(choice == 'v') {
+        cout << "New volume: ";
+        cin.ignore();
+        cin >> volume;
+    }
+    else if(choice == 'd') {
+        cout << "New price: ";
+        cin.ignore();
+        cin >> price;
+    }
+    else if(choice == 'n') {
+        cout << "New quantity: ";
+        cin.ignore();
+        cin >> quantity;
+    }
+    else if(choice != 'q'){
+        cout << "You entered an invalid value. Please type the letter the corresponds with the action.";
+    }
 }

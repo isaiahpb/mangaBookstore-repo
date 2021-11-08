@@ -41,10 +41,11 @@ void Inventory::modifyManga() {
         while(choice != 'q') {
             cout << endl;
             cout << "What would like to modify? (q to quit)" << endl;
-            cout << "Title (t), Author (a), Publisher(p), Volume(v), Price(d), Quantity(n): ";
+            cout << "Title(t), Author(a), Publisher(p), Volume(v), Price(d), Quantity(n): ";
             cin.clear();
             cin >> choice;
             inventory.at(index).modify(choice);
+            cout << endl;
         }
     }
     else {
